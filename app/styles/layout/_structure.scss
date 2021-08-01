@@ -1,0 +1,13 @@
+.wrapper {
+  max-width: $wrapper;
+  margin: 0 auto;
+}
+.container {
+  max-width: $container + 30px;
+  padding: 0 1.5rem;
+  margin: 0 auto;
+}
+img {
+  display: block;
+  max-width: 100%;
+}

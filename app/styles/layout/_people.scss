@@ -1,0 +1,137 @@
+.people {
+  padding-bottom: 11rem;
+  &-container {
+    margin-left: -18rem;
+    @include flexboxUpdate(
+      (
+        align-items: center,
+        justify-content: space-between,
+      )
+    );
+  }
+  &-item {
+    width: 50%;
+  }
+  &-content {
+    &-title {
+      font-size: 4rem;
+      font-weight: bold;
+    }
+    &-desc {
+      margin: 3rem 0 4rem 0;
+      @include textClamp(2);
+      font-size: 1.6rem;
+    }
+    &-rating {
+      i {
+        color: #ffcc00;
+      }
+      margin-bottom: 2rem;
+    }
+    &-heading {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
+    }
+    &-info {
+      @include textClamp(4);
+      margin-bottom: 6rem;
+    }
+  }
+  &-user {
+    position: relative;
+    @include flexboxUpdate(
+      (
+        align-items: center,
+        justify-content: space-between,
+      )
+    );
+    &-avarta {
+    }
+    &-info {
+      margin-left: 3rem;
+    }
+    &-heading {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+    }
+  }
+  &-box {
+    @include flexboxUpdate(
+      (
+        align-items: center,
+      )
+    );
+  }
+  &-icon {
+    &-left,
+    &-right {
+      border: 1px solid #eff3f8;
+      padding: 15px;
+      border-radius: 100rem;
+      color: #dee1e6;
+      &:hover {
+        color: $button-color;
+      }
+    }
+    &-spacing {
+      border-left: 1px solid #eff3f8;
+      margin: 0 1rem;
+    }
+  }
+  @include maxWidth(1023){
+    &-container{
+      margin-left: 0;
+    }
+    &-content {
+      &-title {
+        font-size: 2.5rem;
+        text-align: center;
+      }
+      &-desc {
+      }
+      &-rating {
+        display: inline-block;
+      }
+      &-info{
+        margin-bottom: 2.5rem;
+      }
+    }
+    &-user{
+      &-avatar{
+        width: 25%;
+      }
+      &-info{
+        margin-left: 1rem;
+        
+      }
+      &-heading{
+        margin-bottom: 1rem;
+      }
+    }
+  }
+  @include maxWidth(767) {
+    &-container {
+      margin-left: 0;
+      flex-direction: column;
+    }
+    &-item {
+      width: 100%;
+      &:first-child {
+        margin-bottom: 4rem;
+      }
+    }
+    &-content {
+      &-title {
+        font-size: 2.5rem;
+        text-align: center;
+      }
+      &-desc {
+      }
+      &-rating {
+        display: inline-block;
+      }
+    }
+  }
+}

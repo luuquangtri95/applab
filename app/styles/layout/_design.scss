@@ -1,0 +1,24 @@
+.design {
+  &-inner {
+    @include flexboxUpdate(
+      (
+        align-items: center,
+        justify-content: space-between,
+      )
+    );
+    &-item {
+      width: calc(50% - 57.5px);
+    }
+  }
+  @include maxWidth(767) {
+    &-inner {
+      flex-direction: column;
+      &-item {
+        width: 100%;
+        &:first-child {
+          margin-bottom: 2rem;
+        }
+      }
+    }
+  }
+}

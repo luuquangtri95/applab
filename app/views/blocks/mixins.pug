@@ -1,0 +1,14 @@
+mixin blockContent(data)
+  .block-inner-content(class= attributes.class)
+    h3.block-inner-title= data.title 
+    p.block-inner-desc= data.desc
+    if data.isbutton
+      a.button.button--primary= data.btnText
+
+mixin blockIcon(data)
+  .block-inner-item(class="block-inner-item--" + data.attr)(class=attributes.class)
+    .block-inner-image(class="block-inner-image--" + data.attr)
+      image.smart-inner-icon(src= data.src)
+    .block-inner-content
+      h3.block-inner-title(class="block-inner-title--" + data.attr)= data.title
+      p.block-inner-desc= data.desc

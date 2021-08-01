@@ -1,0 +1,142 @@
+// @mixin flexbox(
+//   $align-items: stretch,
+//   $justify-content: center,
+//   $flex-direction: row,
+//   $flex-wrap: nowrap,
+//   $flex: flex
+// ) {
+//   display: $flex;
+//   align-items: $align-items;
+//   justify-content: $justify-content;
+//   flex-direction: $flex-direction;
+//   flex-wrap: $flex-wrap;
+// }
+
+@mixin absoluteCenter($direction: "left", $positon: absolute) {
+  position: $positon;
+  @if $direction == "left" {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  @if $direction == "top" {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  @if $direction == "both" {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@mixin absoluteFull {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+@mixin maxWidth($breakpoint) {
+  @media screen and (max-width: $breakpoint + px) {
+    @content;
+  }
+}
+@mixin minWidth($breakpoint) {
+  @media screen and (min-width: $breakpoint + px) {
+    @content;
+  }
+}
+
+@mixin hideScroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+//ẩn chữ nếu chữ quá dài
+@mixin textClamp($row: 1, $size: 100%) {
+  display: -webkit-box;
+  -webkit-line-clamp: $row;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: $size;
+  max-width: $size;
+  white-space: pre-wrap;
+  // word-break: break-all; // rớt từ loạn xì ngầu
+  word-break: break-word;
+}
+
+@mixin scollbarCustom($width: 6px, $bgcolor: #f5f5f5, $bgthump: $third-color) {
+  &::-webkit-scrollbar {
+    width: $width;
+  }
+
+  &::-webkit-scrollbar-track {
+    // -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: $bgcolor;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: $bgthump;
+  }
+}
+
+@mixin touchSlider($width: 80%, $gap: 2.5rem) {
+  display: grid !important;
+  justify-content: flex-start !important;
+  grid-auto-columns: $width;
+  grid-auto-flow: column;
+  grid-gap: $gap;
+  overflow: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-snap-stop: always;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  -webkit-overflow-scrolling: touch;
+  // scroll-padding: 1rem;
+  grid-template-columns: unset;
+  padding: 2rem;
+  @include hideScroll;
+  &::-webkit-scrollbar {
+    display: none;
+    width: 0;
+  }
+  & > * {
+    scroll-snap-align: center;
+  }
+}
+
+// @mixin color($config: ()) {
+//   $config: extend(
+//     (
+//       color: red,
+//     ),
+//     $config
+//   );
+//   color: map-get($config, color);
+// }
+
+@mixin flexboxUpdate($config: ()) {
+  $config: extend(
+    (
+      align-items: stretch,
+      justify-content: flex-start,
+      flex-direction: row,
+      flex-wrap: nowrap,
+      display: flex,
+    ),
+    $config
+  );
+  display: map-get($config, display);
+  align-items: map-get($config, align-items);
+  justify-content: map-get($config, justify-content);
+  flex-direction: map-get($config, flex-direction);
+  flex-wrap: map-get($config, flex-wrap);
+}

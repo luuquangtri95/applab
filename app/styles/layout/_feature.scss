@@ -1,0 +1,118 @@
+.feature {
+  padding-top: 16rem;
+  &-inner {
+    margin-left: -16rem;
+    @include flexboxUpdate(
+      (
+        justify-content: flex-start,
+      )
+    );
+    &-item {
+      width: calc(50% - 3.8rem);
+      margin-left: 3.8rem;
+      &:last-child {
+        width: 43rem;
+      }
+    }
+    &-title {
+      font-size: 3.6rem;
+      font-weight: bold;
+      line-height: 1.4;
+      color: $menu-color;
+      span {
+        display: block;
+      }
+    }
+    &-desc {
+      font-size: 1.6rem;
+      line-height: 1.4;
+      margin-bottom: 9rem;
+    }
+  }
+  &-content {
+    &-item {
+      margin-bottom: 6.5rem;
+      @include flexboxUpdate(
+        (
+          align-items: center,
+          justify-content: space-between,
+        )
+      );
+    }
+    &-inner {
+      border-radius: 100rem;
+      margin-right: 3.2rem;
+      &--red {
+        background-color: #ffecef;
+      }
+      &--blue {
+        background-color: #f4f4ff;
+      }
+      &--green {
+        background-color: #e4ffee;
+      }
+    }
+    &-icon {
+      margin-right: 3.5rem;
+      padding: 15px;
+      // position: relative;
+      // border-radius: 100rem;
+      object-fit: cover;
+
+      // &--blue {
+      //   background-color: #f4f4ff;
+      // }
+      // &--green {
+      //   background-color: #e4ffee;
+      // }
+      // &::before {
+      //   position: absolute;
+      //   content: "";
+      //   top: 0;
+      //   right: 0;
+      //   left: 0;
+      //   bottom: 0;
+      //   border-radius: inherit;
+      //   background-color: currentColor;
+      // }
+    }
+    &-title {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 2.2rem;
+      &--red {
+        color: red;
+      }
+      &--blue {
+        color: blue;
+      }
+      &--green {
+        color: green;
+      }
+    }
+    &-desc {
+      font-weight: 1.6rem;
+      line-height: 1.4;
+      @include textClamp(3);
+    }
+  }
+  @include maxWidth(1023) {
+    &-inner {
+      margin-left: 0;
+    }
+  }
+  @include maxWidth(767) {
+    padding-top: 5rem;
+    &-inner {
+      flex-direction: column;
+      margin-left: 0;
+      &-item {
+        width: 100%;
+        margin-left: 0;
+        &:last-child {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

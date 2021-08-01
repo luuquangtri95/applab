@@ -1,0 +1,91 @@
+.question {
+  // width: 95rem;
+  // margin: 0 auto;
+  padding-bottom: 10rem;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 10rem;
+  &-inner {
+    width: 95rem;
+    margin: 0 auto;
+  }
+  &-box {
+    text-align: center;
+    width: 63rem;
+    margin: 0 auto;
+    &-title {
+      font-size: 4rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
+    }
+    &-desc {
+      @include textClamp(2);
+      margin-bottom: 6.5rem;
+    }
+  }
+  &-contact {
+    padding: 5rem 9rem 5rem 8rem;
+    background-color: #f5f7fa;
+    margin-bottom: 1rem;
+    &-title {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 3.5rem;
+    }
+    &-desc {
+      @include textClamp(3);
+    }
+  }
+  &-accordion {
+    &-item {
+      padding: 2.5rem 4rem 2.5rem 8rem;
+      background-color: #f5f7fa;
+      @include flexboxUpdate(
+        (
+          align-items: center,
+          justify-content: space-between,
+        )
+      );
+      &-title {
+        font-size: 2rem;
+        font-weight: bold;
+      }
+      &-icon {
+        font-size: 2rem;
+      }
+      &:not(:first-child) {
+        margin: 1rem 0;
+      }
+    }
+  }
+  @include maxWidth(1023){
+    &-inner{
+      width: 100%;
+    }
+  }
+  @include maxWidth(767) {
+    &-inner {
+      width: 100%;
+    }
+    &-box {
+      width: 100%;
+      &-title{
+        font-size: 2.5rem;
+      }
+    }
+    &-contact {
+      padding: 2rem;
+      &-title {
+        margin-bottom: 2rem;
+      }
+    }
+    &-accordion {
+      &-item {
+        padding: 2rem;
+        &-title {
+          font-size: 1.4rem;
+          @include textClamp;
+        }
+      }
+    }
+  }
+}

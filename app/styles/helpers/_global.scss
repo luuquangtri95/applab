@@ -1,0 +1,172 @@
+a {
+  text-decoration: none;
+}
+body {
+  line-height: 1;
+  font-size: 1.4rem;
+  font-family: "Quicksand", sans-serif;
+}
+
+input,
+textarea,
+select {
+  outline: none;
+  border: none;
+  font-family: inherit;
+}
+.block {
+  &-heading {
+    width: 52rem;
+    &-title {
+      font-size: 6rem;
+      font-weight: bold;
+      color: $menu-color;
+      padding-bottom: 2.5rem;
+    }
+    &-desc {
+      font-size: 1.8rem;
+      line-height: 1.4;
+      padding-bottom: 4rem;
+    }
+  }
+  @include maxWidth(1023) {
+    &-heading {
+      width: 100%;
+    }
+  }
+  @include maxWidth(767) {
+    &-heading {
+      width: 100%;
+      &-title {
+        font-size: 2rem;
+      }
+      &-desc {
+        font-size: 1.4rem;
+        padding-bottom: 2rem;
+      }
+    }
+  }
+}
+
+.block {
+  &-inner {
+    &-title {
+      font-size: 4rem;
+      font-weight: bold;
+      line-height: 1.2;
+      color: $menu-color;
+      // margin-bottom: 1.5rem;
+      span {
+        display: block;
+      }
+    }
+    &-desc {
+      font-size: 1.6rem;
+      line-height: 1.4;
+      margin: 3rem 0 4rem 0;
+      @include textClamp(3);
+    }
+  }
+  // @include maxWidth(1023) {
+  //   &-inner {
+  //     &-title {
+  //       font-size: 3rem;
+  //       margin-top: 0;
+  //     }
+  //   }
+  // }
+  @include maxWidth(767) {
+    &-inner {
+      &-title {
+        font-size: 3rem;
+      }
+      &-desc {
+        font-size: 1.4rem;
+        margin: 1.5rem 0 2rem 0;
+      }
+    }
+  }
+}
+// block inner
+.block {
+  &-inner {
+    &-image {
+      width: 100px;
+      height: 100px;
+      border-radius: 100rem;
+      @include flexboxUpdate(
+        (
+          align-items: center,
+          justify-content: center,
+        )
+      );
+      &--red {
+        background-color: #ffecef;
+      }
+      &--blue {
+        background-color: #eaf9ff;
+      }
+      &--yellow {
+        background-color: #fff6d3;
+      }
+      &--green {
+        background-color: #e4ffee;
+      }
+      &--light-blue {
+        background-color: #f4f4ff;
+      }
+      &--orange {
+        background-color: #fdeee4;
+      }
+    }
+    &-icon {
+      object-fit: cover;
+      padding: 15px;
+      display: inline;
+      flex-shrink: 0;
+    }
+    &-content {
+    }
+    &-title {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+      margin-top: 3.5rem;
+      &--red {
+        color: red;
+      }
+      &--blue {
+        color: blue;
+      }
+      &--green {
+        color: green;
+      }
+    }
+    &-desc {
+      @include textClamp(3);
+      line-height: 1.4;
+    }
+  }
+}
+.text {
+  line-height: 1.4;
+  font-size: 1.6rem;
+}
+.slick-arrow {
+  border-radius: 100rem;
+  border: none;
+  position: absolute;
+  z-index: 1;
+  background-color: transparent;
+  &:hover {
+    background-color: #eff3f8;
+  }
+}
+.slick-prev {
+  right: 66px;
+  bottom: 0;
+}
+.slick-next {
+  right: 0px;
+  bottom: 0;
+}

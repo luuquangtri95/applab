@@ -1,0 +1,72 @@
+.download {
+  &-inner {
+    @include flexboxUpdate(
+      (
+        align-items: center,
+        justify-content: space-between,
+      )
+    );
+    &-item {
+      width: 50%;
+      &-title {
+        font-size: 4.8rem;
+        font-weight: bold;
+        margin-bottom: 3rem;
+      }
+      &-desc {
+        @include textClamp(2);
+        margin-bottom: 5rem;
+      }
+      &:last-child {
+        transform: scale(1.4);
+      }
+    }
+    &-app {
+      @include flexboxUpdate(
+        (
+          align-items: center,
+        )
+      );
+      &-icon {
+        &:first-child {
+          margin-right: 3.5rem;
+        }
+      }
+    }
+  }
+  @include maxWidth(1023) {
+    &-inner {
+      &-item {
+        &:last-child {
+          transform: none;
+        }
+      }
+    }
+  }
+  @include maxWidth(767) {
+    &-inner {
+      flex-direction: column-reverse;
+      &-item {
+        width: 100%;
+        &:last-child {
+          transform: none;
+        }
+        &-title {
+          font-size: 2.5rem;
+        }
+        &-desc {
+          margin-bottom: 2rem;
+        }
+      }
+      &-app {
+        &-icon {
+          width: 50%;
+          margin-bottom: 2rem;
+          &:first-child {
+            margin-right: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
