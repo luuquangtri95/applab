@@ -73,6 +73,7 @@
     }
   }
   @include maxWidth(1023) {
+    padding-top: 5rem;
     &-btn {
       margin-bottom: 4rem;
     }
