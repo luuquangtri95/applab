@@ -54,14 +54,18 @@
     }
   }
   @include maxWidth(1023) {
-    padding-top: 5rem;
+    padding: 1.5rem 0;
+    position: fixed;
+    width: 100%;
+    background: #fff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     &-menu {
       &-list {
         background-color: #fff;
         position: fixed;
         top: 0;
         right: 0;
-        width: 35rem;
+        width: 100%;
         height: 100%;
         flex-direction: column;
         // display: none;

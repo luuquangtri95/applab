@@ -268,13 +268,18 @@ select {
       text-transform: uppercase; } }
   @media screen and (max-width: 1023px) {
     .header {
-      padding-top: 5rem; }
+      padding: 1.5rem 0;
+      position: fixed;
+      width: 100%;
+      background: #fff;
+      -webkit-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; }
       .header-menu-list {
         background-color: #fff;
         position: fixed;
         top: 0;
         right: 0;
-        width: 35rem;
+        width: 100%;
         height: 100%;
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
@@ -333,7 +338,6 @@ img {
   max-width: 100%; }
 
 .banner {
-  margin-top: 7rem;
   position: relative;
   z-index: 10; }
   .banner-inner {
@@ -430,29 +434,31 @@ img {
     .banner-caption-icon {
       font-size: 1rem; } }
   @media screen and (max-width: 767px) {
-    .banner-btn {
-      margin-bottom: 4rem; }
-    .banner-inner {
-      padding-top: 1.5rem; }
-      .banner-inner::before {
-        display: none; }
-      .banner-inner::after {
-        display: none; }
-    .banner-container {
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: reverse;
-      -ms-flex-direction: column-reverse;
-      flex-direction: column-reverse;
-      text-align: center; }
-    .banner-item {
-      width: 100%;
-      margin-left: 0; }
-      .banner-item-image {
-        margin: 0 auto; }
-    .banner-caption-title {
-      font-size: 1rem; }
-    .banner-caption-icon {
-      font-size: 1rem; } }
+    .banner {
+      padding-top: 7rem; }
+      .banner-btn {
+        margin-bottom: 4rem; }
+      .banner-inner {
+        padding-top: 1.5rem; }
+        .banner-inner::before {
+          display: none; }
+        .banner-inner::after {
+          display: none; }
+      .banner-container {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse;
+        text-align: center; }
+      .banner-item {
+        width: 100%;
+        margin-left: 0; }
+        .banner-item-image {
+          margin: 0 auto; }
+      .banner-caption-title {
+        font-size: 1rem; }
+      .banner-caption-icon {
+        font-size: 1rem; } }
 
 .brand {
   padding-top: 11.5rem; }
