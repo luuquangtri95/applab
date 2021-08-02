@@ -1,5 +1,5 @@
 .banner {
-  margin-top: 7rem;
+  
   position: relative;
   z-index: 10;
   &-inner {
@@ -106,6 +106,7 @@
     }
   }
   @include maxWidth(767) {
+    padding-top: 7rem;
     &-btn {
       margin-bottom: 4rem;
     }
