@@ -71,7 +71,7 @@
       border-radius: 2rem;
     }
   }
-  @include maxWidth(1023){
+  @include maxWidth(1023) {
     &-btn {
       margin-bottom: 4rem;
     }

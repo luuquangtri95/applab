@@ -17,20 +17,24 @@ $(document).ready(function () {
 });
 
 // menu mobile
-const menuToggole = document.querySelector(".header-menu-toggle");
+const menuToggle = document.querySelector(".hamburger");
 const menuList = document.querySelector(".header-menu-list");
 const classExpand = "is-expand";
 
-menuToggole.addEventListener("click", function () {
-  menuList.classList.add(classExpand);
+menuToggle.addEventListener("click", function () {
+  // menuList.classList.add(classExpand);
+  menuToggle.classList.toggle("is-active");
+  menuList.classList.toggle("is-expand");
 });
 
 // click outsite close menu
 window.addEventListener("click", function (e) {
+  console.log(e.target);
   if (
     !menuList.contains(e.target) &&
     !e.target.matches(".header-menu-toggle")
   ) {
     menuList.classList.remove(classExpand);
+    menuToggle.classList.remove("is-active");
   }
 });
